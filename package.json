@@ -1,7 +1,7 @@
 {
-  "name": "vue-owl-carousel-2",
-  "description": "VueJS wrapper for Owl Carousel 2",
-  "version": "2.0.3",
+  "name": "vue-owl-carousel-cg",
+  "description": "VueJS wrapper for Owl Carousel CodeGames",
+  "version": "2.0.4",
   "author": {
     "name": "Leo Chien <s950329@gmail.com>"
   },
