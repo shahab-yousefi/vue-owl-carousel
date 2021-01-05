@@ -287,6 +287,8 @@ export default {
       checkVisible: this.checkVisible,
     });
 
+    this.$emit("created", owl);
+
     $("#" + this.prevHandler).click(function () {
       owl.trigger("prev.owl.carousel");
     });
