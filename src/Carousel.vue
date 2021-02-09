@@ -12,14 +12,29 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "owl.carousel";
 
-import events from "./utils/events";
+const events = [
+  "initialize",
+  "initialized",
+  "resize",
+  "resized",
+  "refresh",
+  "refreshed",
+  "update",
+  "updated",
+  "drag",
+  "dragged",
+  "translate",
+  "translated",
+  "to",
+  "changed",
+];
 
-export default {
-  name: "VOwlCarousel",
+export default Vue.extend({
   props: {
     items: {
       type: Number,
@@ -222,7 +237,7 @@ export default {
       default: true,
     },
   },
-  data: function () {
+  data() {
     return {
       showPrev: false,
       showNext: true,
@@ -232,8 +247,7 @@ export default {
       nextHandler: "carousel_next_" + this.generateUniqueId(),
     };
   },
-
-  mounted: function () {
+  mounted() {
     const owl = $("#" + this.elementHandle).owlCarousel({
       items: this.items,
       margin: this.margin,
@@ -323,11 +337,10 @@ export default {
       });
     }
   },
-
   methods: {
     generateUniqueId() {
       return Math.random().toString(36).substring(2, 15);
     },
   },
-};
+});
 </script>
